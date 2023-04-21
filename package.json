@@ -5,7 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "node dist/server.js",
+    "start": "node --watch dist/server.js",
+    "copy-files": "rm -r dist ; mkdir dist && cp -R static/ dist/static && cp index.html dist",
+    "build-watch": "tsc --watch",
+    "watch": "npm run copy-files && npm run build-watch",
+    "dev": "webpack --progress --colors --config webpack.conf.js",
+    "prod": "NODE_ENV=production node dist/server.js",
+    "setup": "",
+    "deploy": ""
   },
   "repository": {
     "type": "git",
@@ -20,6 +28,7 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
+    "@types/pg": "^8.6.6",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "dotenv": "^16.0.3",
@@ -30,13 +39,10 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pg": "^8.10.0"
   },
-  "scripts": {
-    "start-dev": "node dist/server.js",
-    "start": "node --watch dist/server.js",
-    "watch": "tsc --watch",
-    "dev": "webpack --progress --colors --config webpack.conf.js",
-    "prod": "NODE_ENV=production webpack -p --config webpack.conf.js"
+  "engines": {
+    "node": ">=18.11.0"
   }
 }
