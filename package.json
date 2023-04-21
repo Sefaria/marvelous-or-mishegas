@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "SPA for users to vote on whether an idea is marvelous or mishegas",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
