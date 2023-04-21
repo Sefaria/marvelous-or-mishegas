@@ -1,25 +1,19 @@
-// const http = require('http');
-import http from 'http'
-const hostname = '127.0.0.1';
-const port = 3000;
+import express from 'express'
+import {dirname, join} from 'node:path'
+import {fileURLToPath} from 'node:url'
+// const PORT = parseInt(process.env.PORT) || 8080;
+const PORT = 8080;
 
-interface Test {
-    test: string,
-    id: number
-}
+const app = express();
+const abc = join(dirname(fileURLToPath(import.meta.url)));
+console.log(abc)
+app.use('/static', express.static(abc+'/static'));
 
-const abc: Test = {
-    test: "Marvelous or Mishegas",
-    id: 5
-}
-
-// @ts-ignore
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end(`${abc.test}! ${abc.id}`);
+app.get('/', (req, res) => {
+    res.sendFile('index.html', {root: dirname(fileURLToPath(import.meta.url))});
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+    console.log('Press Ctrl+C to quit')
+})
