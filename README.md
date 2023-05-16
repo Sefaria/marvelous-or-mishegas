@@ -1,3 +1,10 @@
+# marvelous-or-mishegas
+
+# dev setup
+`npm start`
+`npm run watch`
+
+
 # wfh-ninja
 
 WFH-ninja was originally intended to be a "work from home" excuse generator, allowing the community to vote on the most effective excuses. This repo is built as a generic single page app that displays one quote at a time, with features to "upvote" and "downvote" quotes. User submitted quotes require approval by a registered admin via an admin panel.
