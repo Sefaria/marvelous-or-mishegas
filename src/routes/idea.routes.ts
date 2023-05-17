@@ -9,6 +9,9 @@ const ideaRoutes = function(app: Express) {
         next();
     });
 
+    //app.get("/api/idea/random");
+    //app.post(/api/idea)
+
     app.get("/api/test/all", allAccess);
     app.get("/api/test/user", [verifyToken], userBoard)
     app.get("/api/test/admin", [verifyToken, isAdmin], adminBoard)

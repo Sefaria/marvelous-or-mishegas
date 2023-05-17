@@ -1,12 +1,15 @@
 import mongoose, {Types} from "mongoose"
-import {IRole} from "./role.model"
+import {IIdea, IRole} from "./index.js";
 
 interface IUser {
     _id: Types.ObjectId
     email: string,
     password: string,
-    roles: IRole[]
+    roles: IRole[],
+    upVotes: Types.ObjectId[] | IIdea[],
+    downVotes: Types.ObjectId[] | IIdea[]
 }
+
 
 const User = mongoose.model<IUser>(
     "User",
@@ -17,6 +20,18 @@ const User = mongoose.model<IUser>(
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Role"
+            }
+        ],
+        upVotes: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Idea"
+            }
+        ],
+        downVotes: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Idea"
             }
         ]
     })

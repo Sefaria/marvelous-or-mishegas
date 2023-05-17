@@ -5,7 +5,6 @@ const {Schema} = mongoose;
 interface IRole {
     name: string,
     _id: Types.ObjectId
-
 }
 
 const Role = mongoose.model<IRole>(

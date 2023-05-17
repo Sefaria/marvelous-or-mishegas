@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
-import User from "./user.model.js"
-import Role from "./role.model.js"
+import User, {IUser} from "./user.model.js"
+import Role, {IRole} from "./role.model.js"
+import Idea, {IIdea} from "./idea.model.js"
 mongoose.Promise = global.Promise
 
 // const mongoose = mongoose;
@@ -9,4 +10,4 @@ mongoose.Promise = global.Promise
 
 const ROLES = ["user", "admin"]
 
-export {mongoose, User, Role, ROLES}
+export {mongoose, User, Role, Idea, ROLES, IIdea, IRole, IUser}

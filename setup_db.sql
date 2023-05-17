@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS ideas (
     weight smallint DEFAULT 1,
     date_created TIMESTAMP,
     view_count integer NOT NULL DEFAULT 0,
+    upvotes int DEFAULT 0,
+    downvotes int DEFAULT 0,
     FOREIGN KEY (user_id)
         REFERENCES users (user_id)
 );

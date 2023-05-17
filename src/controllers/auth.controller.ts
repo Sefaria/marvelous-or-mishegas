@@ -3,11 +3,9 @@ import * as bcrypt from "bcryptjs"
 import {Document, Model} from "mongoose"
 import authConfig from "../config/auth.config.js"
 import * as db from "../models/index.js"
-import {IUser} from "../models/user.model.js";
+import {IUser, IRole, Role} from "../models/index.js";
 import {IAuthRequest} from "../requestTypes";
 import {Request, Response} from "express";
-import {Role} from "../models/index.js";
-import {IRole} from "../models/role.model.js";
 
 
 const signup = (req: Request, res: Response) => {
