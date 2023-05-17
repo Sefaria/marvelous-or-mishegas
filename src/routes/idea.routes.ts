@@ -1,5 +1,5 @@
 import { verifyToken, isAdmin  } from "../middlewares/authJwt.js"
-import {allAccess, userBoard, adminBoard} from "../controllers/idea.controller.js"
+import {allAccess, userBoard, adminBoard, randomIdea} from "../controllers/idea.controller.js"
 import {Express, NextFunction, Request, Response} from "express";
 
 const ideaRoutes = function(app: Express) {
@@ -9,7 +9,7 @@ const ideaRoutes = function(app: Express) {
         next();
     });
 
-    //app.get("/api/idea/random");
+    app.get("/api/idea/random", randomIdea);
     //app.post(/api/idea)
 
     app.get("/api/test/all", allAccess);
