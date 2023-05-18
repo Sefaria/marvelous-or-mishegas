@@ -43,7 +43,7 @@ const newIdea = (req: Request, res: Response) => {
     res.send({message: "Successfully added idea", idea: doc});
   }).catch((err: any) => {
     console.error(err);
-    res.status(500);
+    res.status(500).send();
   })
 }
 

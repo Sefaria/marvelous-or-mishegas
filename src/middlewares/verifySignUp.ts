@@ -5,7 +5,7 @@ import {Request, Response, NextFunction} from "express";
 
 const checkDuplicateEmail = (req: Request, res: Response, next: NextFunction) => {
     db.User.findOne({
-        email: req
+        email: req.body.email
     }).exec().then((doc: IUser | null)  => {
             console.log(doc)
             if (doc) {
