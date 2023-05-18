@@ -29,7 +29,7 @@ const weightedIdea = (req:Request, res: Response) => {
 
 const newIdea = (req: Request, res: Response) => {
   const idea: IIdea = {
-    ideaText: req.body.ideaText, // TODO: Sanitize!
+    ideaText: req.body.ideaText, // TODO: Sanitize + Validate!
     weight: 1,
     creator: new mongoose.Types.ObjectId(<string>req.headers.userId),
     dateCreated: new Date(),

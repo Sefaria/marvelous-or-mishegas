@@ -10,8 +10,7 @@ const ideaRoutes = function (app: Express) {
     });
 
     app.get("/api/idea/random", weightedIdea);
-    //app.post(/api/idea)
-
+    app.post("/api/idea/new", [verifyToken], newIdea);
     app.get("/api/test/all", allAccess);
     app.get("/api/test/user", [verifyToken], userBoard)
     app.get("/api/test/admin", [verifyToken, isAdmin], adminBoard);
