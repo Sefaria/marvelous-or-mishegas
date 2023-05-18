@@ -1,7 +1,7 @@
 import {Idea} from "../models/index.js"
 import {Aggregate} from "mongoose";
 
-const getRandomIdea: () => Aggregate<Array<any>> = () => {
+const getWeightedIdea: () => Aggregate<Array<any>> = () => {
     const randNumber = Math.random();
     if (randNumber < .2) { // give it something weighted 1
         return Idea.aggregate(
@@ -20,4 +20,4 @@ const getRandomIdea: () => Aggregate<Array<any>> = () => {
     }
 }
 
-export {getRandomIdea}
+export {getWeightedIdea}

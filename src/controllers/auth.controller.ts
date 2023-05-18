@@ -22,6 +22,7 @@ const signup = (req: Request, res: Response) => {
             res.send({message: "Successful Registration"})
         ).catch((err: any) => {
             console.error(err)
+            res.status(500)
         });
     })
 };

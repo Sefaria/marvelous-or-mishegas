@@ -2,7 +2,7 @@ import mongoose, {Schema, Types} from "mongoose";
 import {IUser} from "./index.js";
 
 interface IIdea {
-    _id: Types.ObjectId,
+    _id?: Types.ObjectId,
     ideaText: string,
     weight: number,
     dateCreated: Date,

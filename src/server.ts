@@ -9,6 +9,7 @@ import {fileURLToPath} from 'node:url'
 import * as db from './models/index.js'
 import { ideaRoutes } from "./routes/idea.routes.js"
 import {authRoutes} from "./routes/auth.routes.js"
+import mongoose from "mongoose";
 
 const PORT = parseInt(process.env.PORT!) || 8080;
 
@@ -60,7 +61,7 @@ function initial() {
     })
 }
 
-db.mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.DB}`)
+mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.DB}`)
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
