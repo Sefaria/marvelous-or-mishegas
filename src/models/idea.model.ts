@@ -14,7 +14,7 @@ interface IIdea {
 }
 
 const Idea = mongoose.model<IIdea>(
-    "User",
+    "Idea",
     new mongoose.Schema<IIdea>({
         ideaText: String,
         weight: Number,
