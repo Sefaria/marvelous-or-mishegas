@@ -43,6 +43,8 @@ const backend = {
          './src/server/server.ts'
      ],
         mode: "development",
+        devtool: 'inline-source-map',
+
     module: {
         rules: [
             {
