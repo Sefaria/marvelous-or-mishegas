@@ -2,7 +2,7 @@
   "name": "marvelous-or-mishegas",
   "version": "1.0.0",
   "description": "SPA for users to vote on whether an idea is marvelous or mishegas",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start-dev": "node dist/server.cjs",
