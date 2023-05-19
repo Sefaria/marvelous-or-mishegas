@@ -10,7 +10,7 @@ const common = {
 
 const frontend = {
     entry: "./src/static/index.js",
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     mode: "development",
     module: {
         rules: [
@@ -43,7 +43,7 @@ const backend = {
          './src/server/server.ts'
      ],
         mode: "development",
-        devtool: 'inline-source-map',
+        devtool: 'eval-source-map',
 
     module: {
         rules: [
