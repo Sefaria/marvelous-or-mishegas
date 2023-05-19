@@ -68,6 +68,6 @@ const backend = {
 }
 
 module.exports = [
-    // Object.assign({}, frontend),
+    Object.assign({}, frontend),
     Object.assign({}, backend)
 ]
