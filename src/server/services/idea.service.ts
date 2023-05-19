@@ -3,6 +3,8 @@ import {Aggregate} from "mongoose";
 
 const getWeightedIdea: () => Aggregate<Array<any>> = () => {
     const randNumber = Math.random();
+    console.log(randNumber)
+    console.log("hi")
     if (randNumber < .2) { // give it something weighted 1
         return Idea.aggregate(
             [

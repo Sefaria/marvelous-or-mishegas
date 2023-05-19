@@ -20,7 +20,7 @@ const weightedIdea = (req:Request, res: Response) => {
   getWeightedIdea().unwind().exec().then(docs => {
     console.log(docs)
     if(docs[0]) {
-          res.status(200).send(docs[0].toString())
+          res.status(200).send(JSON.stringify(docs[0]))
     } else {
       res.status(500).send()
     }
