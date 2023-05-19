@@ -1,5 +1,5 @@
 import mongoose, {Types} from "mongoose"
-import {IIdea, IRole} from "./index.js";
+import {IIdea, IRole} from "./index";
 
 interface IUser {
     _id: Types.ObjectId

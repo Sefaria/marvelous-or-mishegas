@@ -2,11 +2,11 @@ import * as jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 import {Document, Model} from "mongoose"
 import authConfig from "../config/auth.config.js"
-import * as db from "../models/index.js"
-import {IUser, IRole, Role} from "../models/index.js";
+import * as db from "../models"
+import {IUser, IRole, Role} from "../models";
 import {Request, Response} from "express";
-import {getUserToken} from "../services/auth.service.js";
-import {ErrorMessage} from "../interfaces/errorMessage.interface.js";
+import {getUserToken} from "../services/auth.service";
+import {ErrorMessage} from "../interfaces/errorMessage.interface";
 
 
 const signup = (req: Request, res: Response) => {

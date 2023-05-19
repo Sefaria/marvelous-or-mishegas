@@ -1,5 +1,5 @@
 import mongoose, {Schema, Types} from "mongoose";
-import {IUser} from "./index.js";
+import {IUser} from "./index";
 
 interface IIdea {
     _id?: Types.ObjectId,

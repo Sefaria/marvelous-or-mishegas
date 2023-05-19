@@ -1,9 +1,10 @@
 import * as jwt from "jsonwebtoken"
 import authConfig from "../config/auth.config.js"
-import * as db from "../models/index.js"
-import {IRole, IUser} from "../models/index.js";
+import * as db from "../models"
+import {IRole, IUser} from "../models";
 import {NextFunction, Request, Response} from "express";
-import {IAuthRequest} from "../requestTypes";
+import {IAuthRequest} from "../../requestTypes";
+import {Secret} from "jsonwebtoken";
 
 const User = db.User
 const Role = db.Role
@@ -12,7 +13,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     if (!token) {
         return res.status(403).send({message: "no token"});
     }
-    jwt.verify(token, process.env.SECRET, (err: any, decoded: any) => {
+    jwt.verify(token, <Secret>process.env.SECRET, (err: any, decoded: any) => {
         if (err) {
             return res.status(401).send({message: "Unauthorized"});
         }

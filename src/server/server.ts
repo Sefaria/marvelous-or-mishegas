@@ -6,15 +6,14 @@ import cors from 'cors'
 import cookieSession from 'cookie-session'
 import {dirname, join} from 'node:path'
 import {fileURLToPath} from 'node:url'
-import * as db from './models/index.js'
-import { ideaRoutes } from "./routes/idea.routes.js"
-import {authRoutes} from "./routes/auth.routes.js"
+import * as db from './models'
+import { ideaRoutes } from "./routes/idea.routes"
+import {authRoutes} from "./routes/auth.routes"
 import mongoose from "mongoose";
 
 const PORT = parseInt(process.env.PORT!) || 8080;
 
 const app = express();
-const rel_path = join(dirname(fileURLToPath(import.meta.url)));
 let corsOptions = {
   origin: "http://localhost:" + PORT
 };
@@ -32,9 +31,10 @@ app.use(
     })
 )
 
-app.use('/static', express.static(rel_path+'/static'));
+app.use('/static', express.static(__dirname+'/static'));
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: dirname(fileURLToPath(import.meta.url))});
+    console.log(__dirname);
+    res.sendFile('index.html', {root: __dirname});
 });
 
 authRoutes(app);

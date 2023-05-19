@@ -1,5 +1,5 @@
-import {checkDuplicateEmail, checkRolesExist} from '../middlewares/verifySignUp.js'
-import {signin, signup} from '../controllers/auth.controller.js'
+import {checkDuplicateEmail, checkRolesExist} from '../middlewares/verifySignUp'
+import {signin, signup} from '../controllers/auth.controller'
 import {NextFunction, Request, Response, Express} from "express";
 
 const authRoutes = function(app: Express) {

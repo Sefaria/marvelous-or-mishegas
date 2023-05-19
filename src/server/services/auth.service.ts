@@ -1,7 +1,7 @@
-import * as db from "../models/index.js";
-import {IUser} from "../models/index.js";
+import * as db from "../models";
+import {IUser} from "../models";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import {Secret, sign} from "jsonwebtoken";
 
 const getUserToken = (email: string, password:string) => {
     return new Promise((resolve, reject) => {
@@ -18,7 +18,7 @@ const getUserToken = (email: string, password:string) => {
                 if (!validPassword) {
                     return reject({message: "Invalid password"})
                 }
-                let token = jwt.sign({id: user._id}, process.env.SECRET, {
+                let token = sign({id: user._id}, <Secret>process.env.SECRET, {
                     expiresIn: 86400
                 });
                 let authorities = [];

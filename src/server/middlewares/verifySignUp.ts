@@ -1,5 +1,5 @@
-import * as db from '../models/index.js'
-import {IUser} from "../models/index.js";
+import * as db from '../models'
+import {IUser} from "../models";
 import {Request, Response, NextFunction} from "express";
 
 

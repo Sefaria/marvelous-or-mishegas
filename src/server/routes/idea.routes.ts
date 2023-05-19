@@ -1,5 +1,5 @@
-import {verifyToken, isAdmin} from "../middlewares/authJwt.js"
-import {allAccess, userBoard, adminBoard, weightedIdea, newIdea} from "../controllers/idea.controller.js"
+import {verifyToken, isAdmin} from "../middlewares/authJwt"
+import {allAccess, userBoard, adminBoard, weightedIdea, newIdea} from "../controllers/idea.controller"
 import {Express, NextFunction, Request, Response} from "express";
 
 const ideaRoutes = function (app: Express) {

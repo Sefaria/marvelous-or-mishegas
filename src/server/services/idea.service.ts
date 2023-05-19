@@ -1,4 +1,4 @@
-import {Idea} from "../models/index.js"
+import {Idea} from "../models"
 import {Aggregate} from "mongoose";
 
 const getWeightedIdea: () => Aggregate<Array<any>> = () => {

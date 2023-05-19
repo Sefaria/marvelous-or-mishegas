@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
-import {getWeightedIdea} from "../services/idea.service.js";
-import * as db from "../models/index.js";
-import {IIdea} from "../models/index.js";
+import {getWeightedIdea} from "../services/idea.service";
+import * as db from "../models";
+import {IIdea} from "../models";
 import mongoose from "mongoose";
 
 const allAccess = (req:Request, res:Response) => {

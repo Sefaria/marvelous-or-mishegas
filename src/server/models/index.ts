@@ -1,6 +1,6 @@
-import User, {IUser} from "./user.model.js"
-import Role, {IRole} from "./role.model.js"
-import Idea, {IIdea} from "./idea.model.js"
+import User, {IUser} from "./user.model"
+import Role, {IRole} from "./role.model"
+import Idea, {IIdea} from "./idea.model"
 
 // const mongoose = mongoose;
 // const user = user
